@@ -20,6 +20,7 @@ redis-server:
     - managed
     - source: salt://redis/etc/redis.conf
     - template: jinja
+    - mode: 644
 
 
 /data/redis:
