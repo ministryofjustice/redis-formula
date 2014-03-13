@@ -26,6 +26,8 @@ redis-server:
 /data/redis:
   file:
     - directory
+    - user: redis
+    - group: redis
 
 
 {% from 'firewall/lib.sls' import firewall_enable with  context %}
