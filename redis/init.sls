@@ -1,6 +1,6 @@
 include:
   - bootstrap.directories
-  - logging.client
+  - logstash.client
 
 
 redis-server:
@@ -34,6 +34,6 @@ redis-server:
 {{ firewall_enable('redis',6379,'tcp') }}
 
 
-{% from 'logging/lib.sls' import logship with context %}
+{% from 'logstash/lib.sls' import logship with context %}
 {{ logship('redis-server.log', '/var/log/redis/redis-server.log', 'redis', ['redis','log'], 'json') }}
 
