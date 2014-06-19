@@ -35,7 +35,7 @@ redis-server:
     - source: salt://redis/files/redis_apparmor_profile
     - template: 'jinja'
     - watch_in:
-       - command: reload-profiles
+       - cmd: reload-profiles
        - service: redis-server
 
 {% from 'firewall/lib.sls' import firewall_enable with  context %}
