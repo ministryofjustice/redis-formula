@@ -1,8 +1,6 @@
 include:
   - bootstrap.directories
   - logstash.client
-  - apparmor
-
 
 redis-server:
   pkg:
@@ -32,10 +30,9 @@ redis-server:
 
 /etc/apparmor.d/usr.bin.redis-server:
   file.managed:
-    - source: salt://redis/files/redis_apparmor_profile
-    - template: 'jinja'
+    - source: salt://redis/templates/redis_apparmor_profile
+    - template: jinja
     - watch_in:
-       - cmd: reload-profiles
        - service: redis-server
 
 {% from 'firewall/lib.sls' import firewall_enable with  context %}
