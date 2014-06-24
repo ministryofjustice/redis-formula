@@ -1,0 +1,15 @@
+#include <tunables/global>
+
+/usr/bin/redis-server {{salt['pillar.get']('apparmor:profiles:redis_server', '')}} {
+  #include <abstractions/apache2-common>
+  #include <abstractions/base>
+
+  /data/redis/* rw,
+  /etc/redis/redis.conf r,
+  /proc/*/stat r,
+  /proc/sys/vm/overcommit_memory r,
+  /run/redis/redis-server.pid w,
+  /usr/bin/redis-server mr,
+  /var/log/redis/redis-server.log w,
+
+}
