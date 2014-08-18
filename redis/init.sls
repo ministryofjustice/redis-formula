@@ -1,5 +1,3 @@
-{% from "redis/map.jinja" import redis with context %}
-
 include:
   - bootstrap.directories
   - logstash.client
