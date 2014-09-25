@@ -1,0 +1,6 @@
+dependencies:
+- git@github.com:ministryofjustice/bootstrap-formula.git
+- git@github.com:ministryofjustice/logstash-formula.git
+
+entry:
+ - redis
