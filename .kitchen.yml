@@ -6,7 +6,6 @@ driver:
 
 provisioner:
   name: salt_solo
-  require_chef_omnibus: false
   formula: redis
   vendor_path: "vendor/_root"
   state_top:
