@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 1024
+
+provisioner:
+  name: salt_solo
+  require_chef_omnibus: false
+  formula: redis
+  vendor_path: "vendor/_root"
+  state_top:
+    base:
+      '*':
+        - firewall
+        - redis
+
+platforms:
+  - name: ubuntu-12.04
+    driver:
+      box: "precise64"
+      box_url: "http://files.vagrantup.com/precise64.box"
+
+suites:
+  - name: default

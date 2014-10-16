@@ -1,2 +1,3 @@
 git@github.com:ministryofjustice/bootstrap-formula.git==v1.0.0
 git@github.com:ministryofjustice/logstash-formula.git==v1.0.0
+git@github.com:ministryofjustice/python-formula.git==v1.0.1
