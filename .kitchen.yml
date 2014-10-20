@@ -2,6 +2,8 @@
 driver:
   name: vagrant
   vagrantfile_erb: "templates/Vagrantfile.erb"
+  cachier:
+    scope: "box"
   customize:
     memory: 1024
 
@@ -14,6 +16,7 @@ provisioner:
       '*':
         - firewall
         - redis
+  omnibus_cachier: true
 
 platforms:
   - name: ubuntu-12.04
