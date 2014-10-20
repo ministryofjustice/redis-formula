@@ -6,6 +6,7 @@ driver:
     scope: "box"
   customize:
     memory: 1024
+  pre_create_command: salt-shaker shake root_formula=ministryofjustice/redis-formula
 
 provisioner:
   name: salt_solo

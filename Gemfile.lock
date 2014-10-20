@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/milosgajdos83/kitchen-salt.git
-  revision: 11dee5e6c5a353b5454b012ed88a16f666e4b21f
+  revision: 8ef58c04cbfbdc7a03c35f0b28113227a3e11256
   branch: vendor-path
   specs:
     kitchen-salt (0.0.19)
