@@ -1,13 +1,4 @@
 ---
-driver:
-  name: vagrant
-  vagrantfile_erb: "templates/Vagrantfile.erb"
-  cachier:
-    scope: "box"
-  customize:
-    memory: 1024
-  pre_create_command: salt-shaker shake root_formula=ministryofjustice/redis-formula
-
 provisioner:
   name: salt_solo
   formula: redis
@@ -20,10 +11,30 @@ provisioner:
   omnibus_cachier: true
 
 platforms:
-  - name: ubuntu-12.04
-    driver:
+  - name: vagrant-ubuntu-12.04
+    driver_plugin: vagrant
+    driver_config:
+      vagrantfile_erb: "templates/Vagrantfile.erb"
+      cachier:
+        scope: "box"
+      customize:
+        memory: 1024
       box: "precise64"
       box_url: "http://files.vagrantup.com/precise64.box"
+      pre_create_command: salt-shaker shake root_formula=ministryofjustice/redis-formula
+
+  - name: aws-ubuntu-12.04
+    driver_plugin: ec2
+    driver_config:
+      aws_access_key_id: ONETWO #<%= ENV['AWS_ACCESS_KEY'] %>
+      aws_secret_access_key: THREE #<%= ENV['AWS_SECRET_KEY'] %>
+      aws_ssh_key_id: FOUR #<%= ENV['AWS_SSH_KEY_ID'] %>
+      ssh_key: <%= File.expand_path('~/.ssh/id_rsa') %>
+      image_id: ami-fd20ad94
+      username: ubuntu
+      security_group_ids: ["sg-1a2b3c4d"]
+      region: eu-west-1
+      availability_zone: eu-west-1
 
 suites:
   - name: default
