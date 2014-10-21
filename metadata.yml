@@ -1,6 +1,8 @@
 dependencies:
 - git@github.com:ministryofjustice/bootstrap-formula.git
 - git@github.com:ministryofjustice/logstash-formula.git
+- git@github.com:ministryofjustice/firewall-formula.git
+- git@github.com:ministryofjustice/supervisor-formula.git
 
 entry:
  - redis

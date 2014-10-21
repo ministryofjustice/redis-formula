@@ -6,7 +6,6 @@ provisioner:
   state_top:
     base:
       '*':
-        - firewall
         - redis
   omnibus_cachier: true
 
@@ -19,8 +18,7 @@ platforms:
         scope: "box"
       customize:
         memory: 1024
-      box: "precise64"
-      box_url: "http://files.vagrantup.com/precise64.box"
+      box: "hashicorp/precise64"
       pre_create_command: salt-shaker shake root_formula=ministryofjustice/redis-formula
 
   - name: aws-ubuntu-12.04
