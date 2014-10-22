@@ -1,4 +1,5 @@
 include:
+  - firewall
   - bootstrap.directories
   - logstash.client
 
