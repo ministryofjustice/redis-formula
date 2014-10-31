@@ -29,7 +29,6 @@ namespace :test do
       when /aws/
         desc 'Run Test Kitchen in AWS'
         task :aws => "test:shaker" do
-          run_shaker(config)
           Kitchen.logger = Kitchen.default_file_logger
           instance.test(:always)
         end
