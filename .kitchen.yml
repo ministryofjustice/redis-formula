@@ -13,7 +13,6 @@ platforms:
   - name: vagrant-ubuntu-12.04
     driver_plugin: vagrant
     driver_config:
-      pre_create_command: "salt-shaker shake root_formula=ministryofjustice/redis-formula"
       vagrantfile_erb: "templates/Vagrantfile.erb"
       cachier:
         scope: "box"
