@@ -19,7 +19,7 @@ redis-server:
 /etc/redis/redis.conf:
   file:
     - managed
-    - source: salt://redis/etc/redis.conf
+    - source: salt://redis/templates/redis.conf
     - template: jinja
     - mode: 644
 
