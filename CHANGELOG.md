@@ -1,4 +1,4 @@
-## CURRENT
+## Version 1.2.0
 
 * All configuration is now performed via pillar data.
 
